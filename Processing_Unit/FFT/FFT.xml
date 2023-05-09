@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2022.08.29.16:51:45"
+ outputDirectory="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CEBA4F23C7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="50000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="fft_comp_sink" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="42" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="fft_comp_sink_valid" direction="input" role="valid" width="1" />
+   <port name="fft_comp_sink_ready" direction="output" role="ready" width="1" />
+   <port name="fft_comp_sink_error" direction="input" role="error" width="2" />
+   <port
+       name="fft_comp_sink_startofpacket"
+       direction="input"
+       role="startofpacket"
+       width="1" />
+   <port
+       name="fft_comp_sink_endofpacket"
+       direction="input"
+       role="endofpacket"
+       width="1" />
+   <port name="fft_comp_sink_data" direction="input" role="data" width="42" />
+  </interface>
+  <interface name="fft_comp_source" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="59" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port
+       name="fft_comp_source_valid"
+       direction="output"
+       role="valid"
+       width="1" />
+   <port name="fft_comp_source_ready" direction="input" role="ready" width="1" />
+   <port
+       name="fft_comp_source_error"
+       direction="output"
+       role="error"
+       width="2" />
+   <port
+       name="fft_comp_source_startofpacket"
+       direction="output"
+       role="startofpacket"
+       width="1" />
+   <port
+       name="fft_comp_source_endofpacket"
+       direction="output"
+       role="endofpacket"
+       width="1" />
+   <port name="fft_comp_source_data" direction="output" role="data" width="59" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="FFT:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CEBA4F23C7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1661781102,AUTO_UNIQUE_ID=(altera_fft_ii:17.0:CALC_LATENCY=256,THROUGHPUT_LATENCY=256,data_flow=Variable Streaming,data_rep=Fixed Point,design_env=QSYS,direction=Bi-directional,dsp_resource_opt=false,engine_arch=Quad Output,hard_fp=false,hyper_opt=false,in_order=Natural,in_width=16,in_width_derived=16,length=256,num_engines=1,num_engines_derived=1,out_order=Digit Reverse,out_width=25,out_width_derived=25,selected_device_family=Cyclone V,twid_width=16,twid_width_derived=16)(clock_source:17.0:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(clock:17.0:)(reset:17.0:)"
+   instancePathKey="FFT"
+   kind="FFT"
+   version="1.0"
+   name="FFT">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1661781102" />
+  <parameter name="AUTO_DEVICE" value="5CEBA4F23C7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <generatedFiles>
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/FFT.vhd"
+       type="VHDL" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twi3.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twr2.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twr3.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twi1.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twr1.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twi2.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_text_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_math_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_lib_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_avalon_streaming_block_sink.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_avalon_streaming_block_source.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_roundsat.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/apn_fft_mult_can.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/apn_fft_mult_cpx_1825.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/apn_fft_mult_cpx.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_top.ocp"
+       type="OTHER"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/hyper_opt_OFF_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_fft_dual_port_ram.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_fft_dual_port_rom.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_fft_mult_add.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_fft_single_port_rom.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_fft_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/hyper_pipeline_interface.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/counter_module.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_lib_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_bit_reverse_addr_control.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_bit_reverse_core.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_bit_reverse_reverse_carry_adder.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_adder_fp.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_addsub.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_bfi.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_bfii.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_bf_control.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_cma.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_cma_adder_fp.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_cma_bfi_fp.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_cma_fp.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_core.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_counter.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_delay.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_enable_control.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_stage.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_stg_out_pipe.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_stg_pipe.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_top.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_twrom.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/intelfpga/17.0/ip/altera/dsp/altera_fft_ii/altera_fft_ii_hw.tcl" />
+   <file path="C:/intelFPGA/17.0/ip/altera/dsp/altera_fft_ii/fft_helper.jar" />
+   <file
+       path="C:/intelFPGA/17.0/quartus/sopc_builder/model/lib/com.altera.entityinterfaces.jar" />
+   <file
+       path="C:/intelfpga/17.0/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="FFT">queue size: 0 starting:FFT "FFT"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>2</b> modules, <b>2</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>3</b> modules, <b>4</b> connections]]></message>
+   <message level="Debug" culprit="FFT"><![CDATA["<b>FFT</b>" reuses <b>altera_fft_ii</b> "<b>submodules/FFT_FFT_Comp</b>"]]></message>
+   <message level="Debug" culprit="FFT"><![CDATA["<b>FFT</b>" reuses <b>altera_reset_controller</b> "<b>submodules/altera_reset_controller</b>"]]></message>
+   <message level="Debug" culprit="FFT">queue size: 1 starting:altera_fft_ii "submodules/FFT_FFT_Comp"</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twi3.hex</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twr2.hex</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twr3.hex</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twi1.hex</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twr1.hex</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twi2.hex</message>
+   <message level="Info" culprit="FFT_Comp"><![CDATA["<b>FFT</b>" instantiated <b>altera_fft_ii</b> "<b>FFT_Comp</b>"]]></message>
+   <message level="Debug" culprit="FFT">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>FFT</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_fft_ii:17.0:CALC_LATENCY=256,THROUGHPUT_LATENCY=256,data_flow=Variable Streaming,data_rep=Fixed Point,design_env=QSYS,direction=Bi-directional,dsp_resource_opt=false,engine_arch=Quad Output,hard_fp=false,hyper_opt=false,in_order=Natural,in_width=16,in_width_derived=16,length=256,num_engines=1,num_engines_derived=1,out_order=Digit Reverse,out_width=25,out_width_derived=25,selected_device_family=Cyclone V,twid_width=16,twid_width_derived=16"
+   instancePathKey="FFT:.:FFT_Comp"
+   kind="altera_fft_ii"
+   version="17.0"
+   name="FFT_FFT_Comp">
+  <parameter name="THROUGHPUT_LATENCY" value="256" />
+  <parameter name="in_width_derived" value="16" />
+  <parameter name="in_order" value="Natural" />
+  <parameter name="hyper_opt" value="false" />
+  <parameter name="num_engines_derived" value="1" />
+  <parameter name="twid_width_derived" value="16" />
+  <parameter name="length" value="256" />
+  <parameter name="out_order" value="Digit Reverse" />
+  <parameter name="selected_device_family" value="Cyclone V" />
+  <parameter name="dsp_resource_opt" value="false" />
+  <parameter name="CALC_LATENCY" value="256" />
+  <parameter name="design_env" value="QSYS" />
+  <parameter name="data_rep" value="Fixed Point" />
+  <parameter name="in_width" value="16" />
+  <parameter name="engine_arch" value="Quad Output" />
+  <parameter name="data_flow" value="Variable Streaming" />
+  <parameter name="out_width" value="25" />
+  <parameter name="num_engines" value="1" />
+  <parameter name="out_width_derived" value="25" />
+  <parameter name="hard_fp" value="false" />
+  <parameter name="twid_width" value="16" />
+  <parameter name="direction" value="Bi-directional" />
+  <generatedFiles>
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twi3.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twr2.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twr3.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twi1.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twr1.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp_opt_twi2.hex"
+       type="HEX"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_text_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_math_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_lib_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_avalon_streaming_block_sink.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_avalon_streaming_block_source.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_roundsat.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/apn_fft_mult_can.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/apn_fft_mult_cpx_1825.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/apn_fft_mult_cpx.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_top.ocp"
+       type="OTHER"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/hyper_opt_OFF_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_fft_dual_port_ram.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_fft_dual_port_rom.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_fft_mult_add.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_fft_single_port_rom.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_fft_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/hyper_pipeline_interface.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/counter_module.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_lib_pkg.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_bit_reverse_addr_control.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_bit_reverse_core.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_bit_reverse_reverse_carry_adder.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_adder_fp.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_addsub.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_bfi.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_bfii.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_bf_control.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_cma.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_cma_adder_fp.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_cma_bfi_fp.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_cma_fp.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_core.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_counter.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_delay.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_enable_control.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_stage.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_stg_out_pipe.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_stg_pipe.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_top.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/auk_dspip_r22sdf_twrom.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/FFT_FFT_Comp.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga/17.0/ip/altera/dsp/altera_fft_ii/altera_fft_ii_hw.tcl" />
+   <file path="C:/intelFPGA/17.0/ip/altera/dsp/altera_fft_ii/fft_helper.jar" />
+   <file
+       path="C:/intelFPGA/17.0/quartus/sopc_builder/model/lib/com.altera.entityinterfaces.jar" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="FFT" as="FFT_Comp" />
+  <messages>
+   <message level="Debug" culprit="FFT">queue size: 1 starting:altera_fft_ii "submodules/FFT_FFT_Comp"</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twi3.hex</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twr2.hex</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twr3.hex</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twi1.hex</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twr1.hex</message>
+   <message level="Info" culprit="FFT_Comp">--- add file: FFT_FFT_Comp_opt_twi2.hex</message>
+   <message level="Info" culprit="FFT_Comp"><![CDATA["<b>FFT</b>" instantiated <b>altera_fft_ii</b> "<b>FFT_Comp</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_reset_controller:17.0:ADAPT_RESET_REQUEST=0,MIN_RST_ASSERTION_TIME=3,NUM_RESET_INPUTS=1,OUTPUT_RESET_SYNC_EDGES=deassert,RESET_REQUEST_PRESENT=0,RESET_REQ_EARLY_DSRT_TIME=1,RESET_REQ_WAIT_TIME=1,SYNC_DEPTH=2,USE_RESET_REQUEST_IN0=0,USE_RESET_REQUEST_IN1=0,USE_RESET_REQUEST_IN10=0,USE_RESET_REQUEST_IN11=0,USE_RESET_REQUEST_IN12=0,USE_RESET_REQUEST_IN13=0,USE_RESET_REQUEST_IN14=0,USE_RESET_REQUEST_IN15=0,USE_RESET_REQUEST_IN2=0,USE_RESET_REQUEST_IN3=0,USE_RESET_REQUEST_IN4=0,USE_RESET_REQUEST_IN5=0,USE_RESET_REQUEST_IN6=0,USE_RESET_REQUEST_IN7=0,USE_RESET_REQUEST_IN8=0,USE_RESET_REQUEST_IN9=0,USE_RESET_REQUEST_INPUT=0"
+   instancePathKey="FFT:.:rst_controller"
+   kind="altera_reset_controller"
+   version="17.0"
+   name="altera_reset_controller">
+  <generatedFiles>
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/Processing_Unit/FFT/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga/17.0/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="FFT" as="rst_controller" />
+  <messages>
+   <message level="Debug" culprit="FFT">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>FFT</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>
