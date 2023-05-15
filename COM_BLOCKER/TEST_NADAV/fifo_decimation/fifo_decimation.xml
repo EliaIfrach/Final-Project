@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2022.08.02.16:05:47"
+ outputDirectory="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CEBA4F23C7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_FIFO_0_CLK_OUT_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_FIFO_0_CLK_OUT_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_FIFO_0_CLK_OUT_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="50000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="fifo_0_clk_out" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="fifo_0_clk_out_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="fifo_0_in" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="4" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port
+       name="fifo_0_in_writedata"
+       direction="input"
+       role="writedata"
+       width="32" />
+   <port name="fifo_0_in_write" direction="input" role="write" width="1" />
+   <port
+       name="fifo_0_in_waitrequest"
+       direction="output"
+       role="waitrequest"
+       width="1" />
+  </interface>
+  <interface name="fifo_0_out" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="4" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="fifo_0_clk_out" />
+   <property name="associatedReset" value="fifo_decimation_reset_out" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="1" />
+   <property name="readWaitStates" value="0" />
+   <property name="readWaitTime" value="0" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port
+       name="fifo_0_out_readdata"
+       direction="output"
+       role="readdata"
+       width="32" />
+   <port name="fifo_0_out_read" direction="input" role="read" width="1" />
+   <port
+       name="fifo_0_out_waitrequest"
+       direction="output"
+       role="waitrequest"
+       width="1" />
+  </interface>
+  <interface name="fifo_decimation_reset_out" kind="reset" start="0">
+   <property name="associatedClock" value="fifo_0_clk_out" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port
+       name="fifo_decimation_reset_out_reset_n"
+       direction="input"
+       role="reset_n"
+       width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="fifo_decimation:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CEBA4F23C7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,AUTO_FIFO_0_CLK_OUT_CLOCK_DOMAIN=-1,AUTO_FIFO_0_CLK_OUT_CLOCK_RATE=-1,AUTO_FIFO_0_CLK_OUT_RESET_DOMAIN=-1,AUTO_GENERATION_ID=1659445544,AUTO_UNIQUE_ID=(clock_source:17.0:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(altera_avalon_fifo:17.0:avalonMMAvalonMMDataWidth=32,avalonMMAvalonSTDataWidth=32,bitsPerSymbol=16,channelWidth=8,derived_sink_source_avalonST_width=32,derived_use_avalonMM_rd_slave=true,derived_use_avalonMM_wr_slave=true,derived_use_avalonST_sink=false,derived_use_avalonST_source=false,deviceFamilyString=Cyclone V,errorWidth=8,fifoDepth=32,fifoInputInterfaceOptions=AVALONMM_WRITE,fifoOutputInterfaceOptions=AVALONMM_READ,showHiddenFeatures=false,singleClockMode=false,singleResetMode=false,symbolsPerBeat=2,useBackpressure=true,useIRQ=true,usePacket=true,useReadControl=false,useRegister=false,useWriteControl=false)(clock:17.0:)(reset:17.0:)"
+   instancePathKey="fifo_decimation"
+   kind="fifo_decimation"
+   version="1.0"
+   name="fifo_decimation">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_FIFO_0_CLK_OUT_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1659445544" />
+  <parameter name="AUTO_DEVICE" value="5CEBA4F23C7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_FIFO_0_CLK_OUT_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_FIFO_0_CLK_OUT_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <generatedFiles>
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/synthesis/fifo_decimation.vhd"
+       type="VHDL" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/synthesis/submodules/fifo_decimation_fifo_decimation.sdc"
+       type="SDC"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/synthesis/submodules/fifo_decimation_fifo_decimation.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/intelfpga/17.0/ip/altera/sopc_builder_ip/altera_avalon_fifo/altera_avalon_fifo_hw.tcl" />
+   <file
+       path="C:/intelfpga/17.0/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="fifo_decimation">queue size: 0 starting:fifo_decimation "fifo_decimation"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>2</b> modules, <b>2</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>3</b> modules, <b>4</b> connections]]></message>
+   <message level="Debug" culprit="fifo_decimation"><![CDATA["<b>fifo_decimation</b>" reuses <b>altera_avalon_fifo</b> "<b>submodules/fifo_decimation_fifo_decimation</b>"]]></message>
+   <message level="Debug" culprit="fifo_decimation"><![CDATA["<b>fifo_decimation</b>" reuses <b>altera_reset_controller</b> "<b>submodules/altera_reset_controller</b>"]]></message>
+   <message level="Debug" culprit="fifo_decimation">queue size: 1 starting:altera_avalon_fifo "submodules/fifo_decimation_fifo_decimation"</message>
+   <message level="Info" culprit="fifo_decimation">Starting RTL generation for module 'fifo_decimation_fifo_decimation'</message>
+   <message level="Info" culprit="fifo_decimation">  Generation command is [exec C:/intelfpga/17.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.0/quartus/bin64/perl/lib -I C:/intelfpga/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.0/quartus/sopc_builder/bin -I C:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo -- C:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo/generate_rtl.pl --name=fifo_decimation_fifo_decimation --dir=C:/Users/ELIAYF~1/AppData/Local/Temp/alt9206_3259781556772130082.dir/0001_fifo_decimation_gen/ --quartus_dir=C:/intelfpga/17.0/quartus --verilog --config=C:/Users/ELIAYF~1/AppData/Local/Temp/alt9206_3259781556772130082.dir/0001_fifo_decimation_gen//fifo_decimation_fifo_decimation_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="fifo_decimation">Done RTL generation for module 'fifo_decimation_fifo_decimation'</message>
+   <message level="Info" culprit="fifo_decimation"><![CDATA["<b>fifo_decimation</b>" instantiated <b>altera_avalon_fifo</b> "<b>fifo_decimation</b>"]]></message>
+   <message level="Debug" culprit="fifo_decimation">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>fifo_decimation</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_avalon_fifo:17.0:avalonMMAvalonMMDataWidth=32,avalonMMAvalonSTDataWidth=32,bitsPerSymbol=16,channelWidth=8,derived_sink_source_avalonST_width=32,derived_use_avalonMM_rd_slave=true,derived_use_avalonMM_wr_slave=true,derived_use_avalonST_sink=false,derived_use_avalonST_source=false,deviceFamilyString=Cyclone V,errorWidth=8,fifoDepth=32,fifoInputInterfaceOptions=AVALONMM_WRITE,fifoOutputInterfaceOptions=AVALONMM_READ,showHiddenFeatures=false,singleClockMode=false,singleResetMode=false,symbolsPerBeat=2,useBackpressure=true,useIRQ=true,usePacket=true,useReadControl=false,useRegister=false,useWriteControl=false"
+   instancePathKey="fifo_decimation:.:fifo_decimation"
+   kind="altera_avalon_fifo"
+   version="17.0"
+   name="fifo_decimation_fifo_decimation">
+  <parameter name="derived_use_avalonMM_rd_slave" value="true" />
+  <parameter name="usePacket" value="true" />
+  <parameter name="fifoDepth" value="32" />
+  <parameter name="deviceFamilyString" value="Cyclone V" />
+  <parameter name="fifoInputInterfaceOptions" value="AVALONMM_WRITE" />
+  <parameter name="derived_use_avalonMM_wr_slave" value="true" />
+  <parameter name="derived_use_avalonST_source" value="false" />
+  <parameter name="useIRQ" value="true" />
+  <parameter name="derived_sink_source_avalonST_width" value="32" />
+  <parameter name="bitsPerSymbol" value="16" />
+  <parameter name="showHiddenFeatures" value="false" />
+  <parameter name="useBackpressure" value="true" />
+  <parameter name="errorWidth" value="8" />
+  <parameter name="useRegister" value="false" />
+  <parameter name="channelWidth" value="8" />
+  <parameter name="fifoOutputInterfaceOptions" value="AVALONMM_READ" />
+  <parameter name="symbolsPerBeat" value="2" />
+  <parameter name="singleResetMode" value="false" />
+  <parameter name="avalonMMAvalonSTDataWidth" value="32" />
+  <parameter name="useWriteControl" value="false" />
+  <parameter name="derived_use_avalonST_sink" value="false" />
+  <parameter name="avalonMMAvalonMMDataWidth" value="32" />
+  <parameter name="useReadControl" value="false" />
+  <parameter name="singleClockMode" value="false" />
+  <generatedFiles>
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/synthesis/submodules/fifo_decimation_fifo_decimation.sdc"
+       type="SDC"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/synthesis/submodules/fifo_decimation_fifo_decimation.v"
+       type="VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga/17.0/ip/altera/sopc_builder_ip/altera_avalon_fifo/altera_avalon_fifo_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="fifo_decimation" as="fifo_decimation" />
+  <messages>
+   <message level="Debug" culprit="fifo_decimation">queue size: 1 starting:altera_avalon_fifo "submodules/fifo_decimation_fifo_decimation"</message>
+   <message level="Info" culprit="fifo_decimation">Starting RTL generation for module 'fifo_decimation_fifo_decimation'</message>
+   <message level="Info" culprit="fifo_decimation">  Generation command is [exec C:/intelfpga/17.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/17.0/quartus/bin64/perl/lib -I C:/intelfpga/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/17.0/quartus/sopc_builder/bin -I C:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo -- C:/intelfpga/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo/generate_rtl.pl --name=fifo_decimation_fifo_decimation --dir=C:/Users/ELIAYF~1/AppData/Local/Temp/alt9206_3259781556772130082.dir/0001_fifo_decimation_gen/ --quartus_dir=C:/intelfpga/17.0/quartus --verilog --config=C:/Users/ELIAYF~1/AppData/Local/Temp/alt9206_3259781556772130082.dir/0001_fifo_decimation_gen//fifo_decimation_fifo_decimation_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="fifo_decimation">Done RTL generation for module 'fifo_decimation_fifo_decimation'</message>
+   <message level="Info" culprit="fifo_decimation"><![CDATA["<b>fifo_decimation</b>" instantiated <b>altera_avalon_fifo</b> "<b>fifo_decimation</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_reset_controller:17.0:ADAPT_RESET_REQUEST=0,MIN_RST_ASSERTION_TIME=3,NUM_RESET_INPUTS=1,OUTPUT_RESET_SYNC_EDGES=deassert,RESET_REQUEST_PRESENT=0,RESET_REQ_EARLY_DSRT_TIME=1,RESET_REQ_WAIT_TIME=1,SYNC_DEPTH=2,USE_RESET_REQUEST_IN0=0,USE_RESET_REQUEST_IN1=0,USE_RESET_REQUEST_IN10=0,USE_RESET_REQUEST_IN11=0,USE_RESET_REQUEST_IN12=0,USE_RESET_REQUEST_IN13=0,USE_RESET_REQUEST_IN14=0,USE_RESET_REQUEST_IN15=0,USE_RESET_REQUEST_IN2=0,USE_RESET_REQUEST_IN3=0,USE_RESET_REQUEST_IN4=0,USE_RESET_REQUEST_IN5=0,USE_RESET_REQUEST_IN6=0,USE_RESET_REQUEST_IN7=0,USE_RESET_REQUEST_IN8=0,USE_RESET_REQUEST_IN9=0,USE_RESET_REQUEST_INPUT=0"
+   instancePathKey="fifo_decimation:.:rst_controller"
+   kind="altera_reset_controller"
+   version="17.0"
+   name="altera_reset_controller">
+  <generatedFiles>
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elia Yfrach/Desktop/Project/FM/fifo_decimation/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga/17.0/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="fifo_decimation" as="rst_controller" />
+  <messages>
+   <message level="Debug" culprit="fifo_decimation">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>fifo_decimation</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

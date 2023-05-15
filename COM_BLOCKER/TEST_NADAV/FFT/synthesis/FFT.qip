@@ -1,0 +1,145 @@
+set_global_assignment -entity "FFT" -library "FFT" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_TOOL_VERSION "17.0"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "FFT" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../FFT.sopcinfo"]
+set_global_assignment -entity "FFT" -library "FFT" -name SLD_INFO "QSYS_NAME FFT HAS_SOPCINFO 1 GENERATION_ID 1661781102"
+set_global_assignment -library "FFT" -name MISC_FILE [file join $::quartus(qip_path) "../FFT.cmp"]
+set_global_assignment -library "FFT" -name SLD_FILE [file join $::quartus(qip_path) "FFT.debuginfo"]
+set_global_assignment -entity "FFT" -library "FFT" -name IP_TARGETED_DEVICE_FAMILY "Cyclone V"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_GENERATED_DEVICE_FAMILY "{Cyclone V}"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_QSYS_MODE "SYSTEM"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "FFT" -name MISC_FILE [file join $::quartus(qip_path) "../../FFT.qsys"]
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_NAME "RkZU"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_DISPLAY_NAME "RkZU"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTY2MTc4MTEwMg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNFQkE0RjIzQzc=::QXV0byBERVZJQ0U="
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfRE9NQUlO::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "FFT" -library "FFT" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfUkVTRVRfRE9NQUlO::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_NAME "YWx0ZXJhX3Jlc2V0X2NvbnRyb2xsZXI="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_DISPLAY_NAME "TWVybGluIFJlc2V0IENvbnRyb2xsZXI="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_VERSION "MTcuMA=="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_DESCRIPTION "Rm9yIHN5c3RlbXMgd2l0aCBtdWx0aXBsZSByZXNldCBpbnB1dHMsIHRoZSBNZXJsaW4gUmVzZXQgQ29udHJvbGxlciBPUnMgYWxsIHJlc2V0IGlucHV0cyBhbmQgZ2VuZXJhdGVzIGEgc2luZ2xlIHJlc2V0IG91dHB1dC4="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "TlVNX1JFU0VUX0lOUFVUUw==::MQ==::TnVtYmVyIG9mIGlucHV0cw=="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "T1VUUFVUX1JFU0VUX1NZTkNfRURHRVM=::ZGVhc3NlcnQ=::T3V0cHV0IFJlc2V0IFN5bmNocm9ub3VzIEVkZ2Vz"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "U1lOQ19ERVBUSA==::Mg==::U3luY2hyb25pemVyIGRlcHRo"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "UkVTRVRfUkVRVUVTVF9QUkVTRU5U::MA==::UmVzZXQgcmVxdWVzdCBsb2dpYyBlbmFibGU="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "UkVTRVRfUkVRX1dBSVRfVElNRQ==::MQ==::UmVzZXQgcmVxdWVzdCB3YWl0IHRpbWU="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "TUlOX1JTVF9BU1NFUlRJT05fVElNRQ==::Mw==::TWluaW11bSByZXNldCBhc3NlcnRpb24gdGltZQ=="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "UkVTRVRfUkVRX0VBUkxZX0RTUlRfVElNRQ==::MQ==::UmVzZXQgcmVxdWVzdCBkZWFzc2VydCB0aW1pbmc="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU4w::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjA="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU4x::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjE="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU4y::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjI="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU4z::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjM="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU40::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjQ="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU41::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjU="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU42::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjY="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU43::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjc="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU44::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjg="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU45::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjk="
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU4xMA==::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjEw"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU4xMQ==::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjEx"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU4xMg==::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjEy"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU4xMw==::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjEz"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU4xNA==::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjE0"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU4xNQ==::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcG9ydCByZXNldF9pbjE1"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "VVNFX1JFU0VUX1JFUVVFU1RfSU5QVVQ=::MA==::RW5hYmxlIHJlc2V0X3JlcSBmb3IgcmVzZXRfaW5wdXRz"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_COMPONENT_PARAMETER "QURBUFRfUkVTRVRfUkVRVUVTVA==::MA==::T25seSBhZGFwdCBvbmx5IHJlc2V0IHJlcXVlc3Q="
+set_instance_assignment -entity FFT_FFT_Comp -library FFT -name MESSAGE_DISABLE 270007
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_NAME "RkZUX0ZGVF9Db21w"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_DISPLAY_NAME "RkZU"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_VERSION "MTcuMA=="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_DESCRIPTION "QWx0ZXJhIEZhc3QgRm91cmllciBUcmFuc2Zvcm0gSUk="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "ZGVzaWduX2Vudg==::UVNZUw==::ZGVzaWduX2Vudg=="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "bGVuZ3Ro::MjU2::TGVuZ3Ro"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "ZGF0YV9mbG93::VmFyaWFibGUgU3RyZWFtaW5n::RGF0YSBGbG93"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "ZGlyZWN0aW9u::QmktZGlyZWN0aW9uYWw=::RGlyZWN0aW9u"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "ZGF0YV9yZXA=::Rml4ZWQgUG9pbnQ=::UmVwcmVzZW50YXRpb24="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "aW5fd2lkdGg=::MTY=::RGF0YSBJbnB1dCBXaWR0aA=="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "aW5fd2lkdGhfZGVyaXZlZA==::MTY=::RGF0YSBJbnB1dCBXaWR0aA=="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "b3V0X3dpZHRo::MjU=::RGF0YSBPdXRwdXQgV2lkdGg="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "b3V0X3dpZHRoX2Rlcml2ZWQ=::MjU=::RGF0YSBPdXRwdXQgV2lkdGg="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "dHdpZF93aWR0aA==::MTY=::VHdpZGRsZSBXaWR0aA=="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "dHdpZF93aWR0aF9kZXJpdmVk::MTY=::VHdpZGRsZSBXaWR0aA=="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "aW5fb3JkZXI=::TmF0dXJhbA==::SW5wdXQgT3JkZXI="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "b3V0X29yZGVy::RGlnaXQgUmV2ZXJzZQ==::T3V0cHV0IE9yZGVy"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "ZW5naW5lX2FyY2g=::UXVhZCBPdXRwdXQ=::QXJjaGl0ZWN0dXJl"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "bnVtX2VuZ2luZXM=::MQ==::TnVtYmVyIG9mIFBhcmFsbGVsIEVuZ2luZXM="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "bnVtX2VuZ2luZXNfZGVyaXZlZA==::MQ==::bnVtX2VuZ2luZXNfZGVyaXZlZA=="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "ZHNwX3Jlc291cmNlX29wdA==::ZmFsc2U=::RFNQIEJsb2NrIFJlc291cmNlIE9wdGltaXphdGlvbg=="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "aGFyZF9mcA==::ZmFsc2U=::RW5hYmxlIEhhcmQgRmxvYXRpbmcgUG9pbnQgQmxvY2tz"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "aHlwZXJfb3B0::ZmFsc2U=::SHlwZXIgT3B0aW1pemF0aW9u"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "Q0FMQ19MQVRFTkNZ::MjU2::Q2FsY3VsYXRpb24gTGF0ZW5jeQ=="
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "VEhST1VHSFBVVF9MQVRFTkNZ::MjU2::VGhyb3VnaHB1dCBMYXRlbmN5"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_COMPONENT_PARAMETER "c2VsZWN0ZWRfZGV2aWNlX2ZhbWlseQ==::Q3ljbG9uZSBW::c2VsZWN0ZWRfZGV2aWNlX2ZhbWlseQ=="
+
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "FFT.vhd"]
+set_global_assignment -library "FFT" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
+set_global_assignment -library "FFT" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_synchronizer.v"]
+set_global_assignment -library "FFT" -name SDC_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.sdc"]
+set_global_assignment -library "FFT" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/FFT_FFT_Comp_opt_twi3.hex"]
+set_global_assignment -library "FFT" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/FFT_FFT_Comp_opt_twr2.hex"]
+set_global_assignment -library "FFT" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/FFT_FFT_Comp_opt_twr3.hex"]
+set_global_assignment -library "FFT" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/FFT_FFT_Comp_opt_twi1.hex"]
+set_global_assignment -library "FFT" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/FFT_FFT_Comp_opt_twr1.hex"]
+set_global_assignment -library "FFT" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/FFT_FFT_Comp_opt_twi2.hex"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_text_pkg.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_math_pkg.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_lib_pkg.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_avalon_streaming_block_sink.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_avalon_streaming_block_source.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_roundsat.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/apn_fft_mult_can.vhd"]
+set_global_assignment -library "FFT" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/apn_fft_mult_cpx_1825.v"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/apn_fft_mult_cpx.vhd"]
+set_global_assignment -library "FFT" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_top.ocp"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/hyper_opt_OFF_pkg.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/altera_fft_dual_port_ram.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/altera_fft_dual_port_rom.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/altera_fft_mult_add.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/altera_fft_single_port_rom.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_fft_pkg.vhd"]
+set_global_assignment -library "FFT" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/hyper_pipeline_interface.v"]
+set_global_assignment -library "FFT" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/counter_module.sv"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_lib_pkg.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_bit_reverse_addr_control.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_bit_reverse_core.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_bit_reverse_reverse_carry_adder.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_adder_fp.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_addsub.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_bfi.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_bfii.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_bf_control.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_cma.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_cma_adder_fp.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_cma_bfi_fp.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_cma_fp.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_core.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_counter.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_delay.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_enable_control.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_stage.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_stg_out_pipe.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_stg_pipe.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_top.vhd"]
+set_global_assignment -library "FFT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/auk_dspip_r22sdf_twrom.vhd"]
+set_global_assignment -library "FFT" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/FFT_FFT_Comp.sv"]
+
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_TOOL_NAME "altera_reset_controller"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_TOOL_VERSION "17.0"
+set_global_assignment -entity "altera_reset_controller" -library "FFT" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_TOOL_NAME "altera_fft_ii"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_TOOL_VERSION "17.0"
+set_global_assignment -entity "FFT_FFT_Comp" -library "FFT" -name IP_TOOL_ENV "Qsys"

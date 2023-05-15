@@ -132,6 +132,38 @@ agreement for further details.
 		(line (pt 78 12)(pt 82 8))
 	)
 )
+(pin
+	(output)
+	(rect 12928 656 13104 672)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "flag_150" (rect 90 0 132 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 5072 944 5248 960)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "avg_inc[14..0]" (rect 90 0 160 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
 (symbol
 	(rect 320 720 352 736)
 	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
@@ -1580,7 +1612,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 4760 888 4960 1000)
+	(rect 4776 888 4976 1000)
 	(text "avg_inc" (rect 5 0 43 12)(font "Arial" ))
 	(text "inst39" (rect 8 96 37 108)(font "Arial" ))
 	(port
@@ -3001,14 +3033,14 @@ agreement for further details.
 		(pt 288 32)
 		(output)
 		(text "sum[31..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "sum[31..0]" (rect 223 27 267 39)(font "Arial" ))
+		(text "sum[31..0]" (rect 223 27 276 39)(font "Arial" ))
 		(line (pt 288 32)(pt 272 32)(line_width 3))
 	)
 	(port
 		(pt 288 48)
 		(output)
 		(text "flag_150" (rect 0 0 42 12)(font "Arial" ))
-		(text "flag_150" (rect 232 43 267 55)(font "Arial" ))
+		(text "flag_150" (rect 232 43 274 55)(font "Arial" ))
 		(line (pt 288 48)(pt 272 48))
 	)
 	(parameter
@@ -3741,27 +3773,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "clk" (rect 4746 904 4760 921)(font "Intel Clear" ))
-	(pt 4760 920)
-	(pt 4736 920)
-)
-(connector
-	(text "rst" (rect 4754 920 4765 937)(font "Intel Clear" ))
-	(pt 4760 936)
-	(pt 4744 936)
-)
-(connector
-	(text "avg_inc[14..0]" (rect 4960 904 5026 921)(font "Intel Clear" ))
-	(pt 4960 920)
-	(pt 4984 920)
-	(bus)
-)
-(connector
-	(pt 4704 848)
-	(pt 4704 952)
-	(bus)
-)
-(connector
 	(pt 4784 760)
 	(pt 4832 760)
 	(bus)
@@ -3780,11 +3791,6 @@ agreement for further details.
 	(text "test[14..0]" (rect 4784 776 4831 793)(font "Intel Clear" ))
 	(pt 4784 792)
 	(pt 4800 792)
-	(bus)
-)
-(connector
-	(pt 4760 952)
-	(pt 4704 952)
 	(bus)
 )
 (connector
@@ -4557,6 +4563,43 @@ agreement for further details.
 	(text "flag_150" (rect 12856 736 12898 753)(font "Intel Clear" ))
 	(pt 12856 752)
 	(pt 12888 752)
+)
+(connector
+	(text "flag_150" (rect 12882 648 12924 665)(font "Intel Clear" ))
+	(pt 12928 664)
+	(pt 12888 664)
+)
+(connector
+	(text "avg_inc[14..0]" (rect 5000 952 5066 969)(font "Intel Clear" ))
+	(pt 5048 952)
+	(pt 5072 952)
+	(bus)
+)
+(connector
+	(text "avg_inc[14..0]" (rect 4976 904 5042 921)(font "Intel Clear" ))
+	(pt 4976 920)
+	(pt 5000 920)
+	(bus)
+)
+(connector
+	(pt 4704 848)
+	(pt 4704 952)
+	(bus)
+)
+(connector
+	(text "clk" (rect 4762 904 4776 921)(font "Intel Clear" ))
+	(pt 4752 920)
+	(pt 4776 920)
+)
+(connector
+	(text "rst" (rect 4770 920 4781 937)(font "Intel Clear" ))
+	(pt 4760 936)
+	(pt 4776 936)
+)
+(connector
+	(pt 4704 952)
+	(pt 4776 952)
+	(bus)
 )
 (text "FM Modolation" (rect 2376 648 2463 667)(font "Intel Clear" (font_size 8)))
 (text "I & Q Waves" (rect 5144 664 5214 683)(font "Intel Clear" (font_size 8)))

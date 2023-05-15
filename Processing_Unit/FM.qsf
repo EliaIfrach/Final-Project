@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CGXFC5C6F27C7
-set_global_assignment -name TOP_LEVEL_ENTITY ProjectWithSignalGenerator
+set_global_assignment -name TOP_LEVEL_ENTITY Ortiada_TEST_BDF
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:43:45  JULY 13, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Standard Edition"
@@ -49,7 +49,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name ENABLE_SIGNALTAP ON
-set_global_assignment -name USE_SIGNALTAP_FILE ADC_TEST_STP.stp
+set_global_assignment -name USE_SIGNALTAP_FILE Test_ORT.stp
 set_location_assignment PIN_R20 -to clk
 set_location_assignment PIN_P11 -to rst
 set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
@@ -86,6 +86,380 @@ set_location_assignment PIN_AE19 -to sw_write
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (VHDL)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id Test_ORT
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to clk -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to Test_ORT|vcc -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to Test_ORT|gnd -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=1024" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=1024" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "BDF_V2:inst|avg_inc:inst39|o_inc[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "BDF_V2:inst|avg_inc:inst39|o_inc[10]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "BDF_V2:inst|avg_inc:inst39|o_inc[11]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "BDF_V2:inst|avg_inc:inst39|o_inc[12]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "BDF_V2:inst|avg_inc:inst39|o_inc[13]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "BDF_V2:inst|avg_inc:inst39|o_inc[14]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "BDF_V2:inst|avg_inc:inst39|o_inc[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "BDF_V2:inst|avg_inc:inst39|o_inc[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "BDF_V2:inst|avg_inc:inst39|o_inc[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "BDF_V2:inst|avg_inc:inst39|o_inc[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "BDF_V2:inst|avg_inc:inst39|o_inc[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "BDF_V2:inst|avg_inc:inst39|o_inc[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "BDF_V2:inst|avg_inc:inst39|o_inc[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "BDF_V2:inst|avg_inc:inst39|o_inc[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "BDF_V2:inst|avg_inc:inst39|o_inc[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "BDF_V2:inst|flag_150" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "BDF_V2:inst|avg_inc:inst39|o_inc[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "BDF_V2:inst|avg_inc:inst39|o_inc[10]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "BDF_V2:inst|avg_inc:inst39|o_inc[11]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "BDF_V2:inst|avg_inc:inst39|o_inc[12]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "BDF_V2:inst|avg_inc:inst39|o_inc[13]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "BDF_V2:inst|avg_inc:inst39|o_inc[14]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "BDF_V2:inst|avg_inc:inst39|o_inc[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "BDF_V2:inst|avg_inc:inst39|o_inc[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "BDF_V2:inst|avg_inc:inst39|o_inc[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "BDF_V2:inst|avg_inc:inst39|o_inc[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "BDF_V2:inst|avg_inc:inst39|o_inc[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "BDF_V2:inst|avg_inc:inst39|o_inc[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "BDF_V2:inst|avg_inc:inst39|o_inc[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "BDF_V2:inst|avg_inc:inst39|o_inc[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "BDF_V2:inst|avg_inc:inst39|o_inc[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "BDF_V2:inst|flag_150" -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[17] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[10]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[18] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[11]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[19] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[12]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[20] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[13]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[21] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[14]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[22] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[15]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[23] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[16]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[24] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[17]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[25] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[18]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[26] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[19]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[27] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[28] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[20]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[29] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[21]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[30] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[22]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[31] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[23]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[32] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[24]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[33] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[25]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[34] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[26]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[35] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[27]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[36] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[28]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[37] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[29]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[38] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[39] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[30]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[40] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[31]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[41] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[32]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[42] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[33]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[43] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[34]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[44] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[35]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[45] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[36]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[46] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[37]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[47] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[38]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[48] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[39]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[49] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[50] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[40]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[51] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[41]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[52] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[42]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[53] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[43]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[54] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[44]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[55] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[45]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[56] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[46]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[57] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[47]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[58] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[59] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[60] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[61] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[62] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[63] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[64] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_eop" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[65] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_sop" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[17] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[10]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[18] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[11]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[19] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[12]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[20] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[13]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[21] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[14]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[22] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[15]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[23] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[16]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[24] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[17]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[25] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[18]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[26] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[19]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[27] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[28] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[20]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[29] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[21]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[30] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[22]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[31] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[23]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[32] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[24]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[33] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[25]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[34] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[26]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[35] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[27]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[36] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[28]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[37] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[29]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[38] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[39] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[30]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[40] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[31]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[41] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[32]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[42] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[33]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[43] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[34]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[44] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[35]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[45] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[36]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[46] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[37]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[47] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[38]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[48] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[39]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[49] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[50] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[40]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[51] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[41]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[52] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[42]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[53] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[43]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[54] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[44]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[55] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[45]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[56] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[46]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[57] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[47]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[58] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[59] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[60] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[61] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[62] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[63] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_data[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[64] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_eop" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[65] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|o_sop" -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to Test_ORT|gnd -section_id Test_ORT
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to Test_ORT|vcc -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[66] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[67] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[68] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[69] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[70] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[71] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[72] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[73] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[74] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[75] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[76] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[77] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[10]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[78] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[11]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[79] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[12]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[80] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[13]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[81] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[14]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[82] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[15]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[83] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[16]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[84] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[17]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[85] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[86] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[87] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[88] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[89] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[90] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[91] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[92] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[93] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[94] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[95] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[10]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[96] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[11]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[97] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[12]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[98] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[13]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[99] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[14]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[100] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[15]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[101] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[16]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[102] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[17]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[103] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[104] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[105] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[106] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[107] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[108] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[109] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[110] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[111] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[112] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_eop" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[113] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_sop" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[114] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_valid" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[115] -to "IFFT_Chirp_tplvl:inst2|chirp_data[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[116] -to "IFFT_Chirp_tplvl:inst2|chirp_data[10]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[117] -to "IFFT_Chirp_tplvl:inst2|chirp_data[11]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[118] -to "IFFT_Chirp_tplvl:inst2|chirp_data[12]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[119] -to "IFFT_Chirp_tplvl:inst2|chirp_data[13]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[120] -to "IFFT_Chirp_tplvl:inst2|chirp_data[14]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[121] -to "IFFT_Chirp_tplvl:inst2|chirp_data[15]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[122] -to "IFFT_Chirp_tplvl:inst2|chirp_data[16]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[123] -to "IFFT_Chirp_tplvl:inst2|chirp_data[17]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[124] -to "IFFT_Chirp_tplvl:inst2|chirp_data[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[125] -to "IFFT_Chirp_tplvl:inst2|chirp_data[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[126] -to "IFFT_Chirp_tplvl:inst2|chirp_data[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[127] -to "IFFT_Chirp_tplvl:inst2|chirp_data[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[128] -to "IFFT_Chirp_tplvl:inst2|chirp_data[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[129] -to "IFFT_Chirp_tplvl:inst2|chirp_data[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[130] -to "IFFT_Chirp_tplvl:inst2|chirp_data[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[131] -to "IFFT_Chirp_tplvl:inst2|chirp_data[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[132] -to "IFFT_Chirp_tplvl:inst2|chirp_data[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[133] -to "IFFT_Chirp_tplvl:inst2|chirp_valid" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[134] -to "Jammer_Connector:inst1|o_f_max[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[135] -to "Jammer_Connector:inst1|o_f_max[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[136] -to "Jammer_Connector:inst1|o_f_max[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[137] -to "Jammer_Connector:inst1|o_f_max[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[138] -to "Jammer_Connector:inst1|o_f_max[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[139] -to "Jammer_Connector:inst1|o_f_max[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[140] -to "Jammer_Connector:inst1|o_f_max[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[141] -to "Jammer_Connector:inst1|o_f_min[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[142] -to "Jammer_Connector:inst1|o_f_min[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[143] -to "Jammer_Connector:inst1|o_f_min[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[144] -to "Jammer_Connector:inst1|o_f_min[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[145] -to "Jammer_Connector:inst1|o_f_min[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[146] -to "Jammer_Connector:inst1|o_f_min[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[147] -to "Jammer_Connector:inst1|o_f_min[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[148] -to "Jammer_Connector:inst1|o_valid" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[66] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[67] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[68] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[69] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[70] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[71] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[72] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[73] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[74] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[75] -to "IFFT_Chirp_tplvl:inst2|ETF_Adapter_v2:inst8|s_count[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[76] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[77] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[10]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[78] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[11]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[79] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[12]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[80] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[13]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[81] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[14]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[82] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[15]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[83] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[16]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[84] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[17]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[85] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[86] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[87] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[88] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[89] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[90] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[91] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[92] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[93] -to "IFFT_Chirp_tplvl:inst2|FLM_competition:inst10|o_block_range[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[94] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[95] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[10]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[96] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[11]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[97] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[12]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[98] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[13]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[99] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[14]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[100] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[15]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[101] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[16]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[102] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[17]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[103] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[104] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[105] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[106] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[107] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[108] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[109] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[110] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[111] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_data[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[112] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_eop" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[113] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_sop" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[114] -to "IFFT_Chirp_tplvl:inst2|IFFT_Block_source_valid" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[115] -to "IFFT_Chirp_tplvl:inst2|chirp_data[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[116] -to "IFFT_Chirp_tplvl:inst2|chirp_data[10]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[117] -to "IFFT_Chirp_tplvl:inst2|chirp_data[11]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[118] -to "IFFT_Chirp_tplvl:inst2|chirp_data[12]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[119] -to "IFFT_Chirp_tplvl:inst2|chirp_data[13]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[120] -to "IFFT_Chirp_tplvl:inst2|chirp_data[14]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[121] -to "IFFT_Chirp_tplvl:inst2|chirp_data[15]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[122] -to "IFFT_Chirp_tplvl:inst2|chirp_data[16]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[123] -to "IFFT_Chirp_tplvl:inst2|chirp_data[17]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[124] -to "IFFT_Chirp_tplvl:inst2|chirp_data[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[125] -to "IFFT_Chirp_tplvl:inst2|chirp_data[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[126] -to "IFFT_Chirp_tplvl:inst2|chirp_data[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[127] -to "IFFT_Chirp_tplvl:inst2|chirp_data[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[128] -to "IFFT_Chirp_tplvl:inst2|chirp_data[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[129] -to "IFFT_Chirp_tplvl:inst2|chirp_data[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[130] -to "IFFT_Chirp_tplvl:inst2|chirp_data[7]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[131] -to "IFFT_Chirp_tplvl:inst2|chirp_data[8]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[132] -to "IFFT_Chirp_tplvl:inst2|chirp_data[9]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[133] -to "IFFT_Chirp_tplvl:inst2|chirp_valid" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[134] -to "Jammer_Connector:inst1|o_f_max[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[135] -to "Jammer_Connector:inst1|o_f_max[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[136] -to "Jammer_Connector:inst1|o_f_max[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[137] -to "Jammer_Connector:inst1|o_f_max[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[138] -to "Jammer_Connector:inst1|o_f_max[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[139] -to "Jammer_Connector:inst1|o_f_max[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[140] -to "Jammer_Connector:inst1|o_f_max[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[141] -to "Jammer_Connector:inst1|o_f_min[0]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[142] -to "Jammer_Connector:inst1|o_f_min[1]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[143] -to "Jammer_Connector:inst1|o_f_min[2]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[144] -to "Jammer_Connector:inst1|o_f_min[3]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[145] -to "Jammer_Connector:inst1|o_f_min[4]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[146] -to "Jammer_Connector:inst1|o_f_min[5]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[147] -to "Jammer_Connector:inst1|o_f_min[6]" -section_id Test_ORT
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[148] -to "Jammer_Connector:inst1|o_valid" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=149" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=149" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=149" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id Test_ORT
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=471" -section_id Test_ORT
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE ../../Value_Generator.vhd
+set_global_assignment -name VHDL_FILE IFFT_Chirp/code/OC.vhd
+set_global_assignment -name VHDL_FILE IFFT_Chirp/code/Input_Data_Router_v2.vhd
+set_global_assignment -name VHDL_FILE IFFT_Chirp/code/Input_Data_Router.vhd
+set_global_assignment -name VHDL_FILE IFFT_Chirp/code/IFOC.vhd
+set_global_assignment -name BDF_FILE IFFT_Chirp/code/IFFT_Chirp_tplvl.bdf
+set_global_assignment -name VHDL_FILE IFFT_Chirp/code/FLM_competition.vhd
+set_global_assignment -name VHDL_FILE IFFT_Chirp/code/ETF_Adapter_v2.vhd
+set_global_assignment -name VHDL_FILE IFFT_Chirp/code/CO_DFF.vhd
+set_global_assignment -name VHDL_FILE IFFT_Chirp/code/ChirpCounter.vhd
+set_global_assignment -name VHDL_FILE Jammer_Connector.vhd
 set_global_assignment -name VHDL_FILE Data_Mux_Component_v3.vhd
 set_global_assignment -name VHDL_FILE Data_Mux_Component_v2.vhd
 set_global_assignment -name VHDL_FILE Data_Mux_Component.vhd
@@ -187,124 +561,10 @@ set_global_assignment -name SIGNALTAP_FILE output_files/UartST.stp
 set_global_assignment -name BDF_FILE output_files/RamBDF.bdf
 set_global_assignment -name SIGNALTAP_FILE Ram_ST.stp
 set_global_assignment -name SIGNALTAP_FILE gui_stignal.stp
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to clk -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "ADC_Adapter:inst|ADA_D[0]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "ADC_Adapter:inst|ADA_D[10]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "ADC_Adapter:inst|ADA_D[11]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "ADC_Adapter:inst|ADA_D[12]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "ADC_Adapter:inst|ADA_D[13]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "ADC_Adapter:inst|ADA_D[1]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "ADC_Adapter:inst|ADA_D[2]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "ADC_Adapter:inst|ADA_D[3]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "ADC_Adapter:inst|ADA_D[4]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "ADC_Adapter:inst|ADA_D[5]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "ADC_Adapter:inst|ADA_D[6]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "ADC_Adapter:inst|ADA_D[7]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "ADC_Adapter:inst|ADA_D[8]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "ADC_Adapter:inst|ADA_D[9]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "ADC_Adapter:inst|DA[0]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "ADC_Adapter:inst|DA[10]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to "ADC_Adapter:inst|DA[11]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[17] -to "ADC_Adapter:inst|DA[12]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[18] -to "ADC_Adapter:inst|DA[13]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[19] -to "ADC_Adapter:inst|DA[1]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[20] -to "ADC_Adapter:inst|DA[2]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[21] -to "ADC_Adapter:inst|DA[3]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[22] -to "ADC_Adapter:inst|DA[4]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[23] -to "ADC_Adapter:inst|DA[5]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[24] -to "ADC_Adapter:inst|DA[6]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[25] -to "ADC_Adapter:inst|DA[7]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[26] -to "ADC_Adapter:inst|DA[8]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[27] -to "ADC_Adapter:inst|DA[9]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "ADC_Adapter:inst|ADA_D[0]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "ADC_Adapter:inst|ADA_D[10]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "ADC_Adapter:inst|ADA_D[11]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "ADC_Adapter:inst|ADA_D[12]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "ADC_Adapter:inst|ADA_D[13]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "ADC_Adapter:inst|ADA_D[1]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "ADC_Adapter:inst|ADA_D[2]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "ADC_Adapter:inst|ADA_D[3]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "ADC_Adapter:inst|ADA_D[4]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "ADC_Adapter:inst|ADA_D[5]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "ADC_Adapter:inst|ADA_D[6]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "ADC_Adapter:inst|ADA_D[7]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "ADC_Adapter:inst|ADA_D[8]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "ADC_Adapter:inst|ADA_D[9]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "ADC_Adapter:inst|DA[0]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "ADC_Adapter:inst|DA[10]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to "ADC_Adapter:inst|DA[11]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[17] -to "ADC_Adapter:inst|DA[12]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[18] -to "ADC_Adapter:inst|DA[13]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[19] -to "ADC_Adapter:inst|DA[1]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[20] -to "ADC_Adapter:inst|DA[2]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[21] -to "ADC_Adapter:inst|DA[3]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[22] -to "ADC_Adapter:inst|DA[4]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[23] -to "ADC_Adapter:inst|DA[5]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[24] -to "ADC_Adapter:inst|DA[6]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[25] -to "ADC_Adapter:inst|DA[7]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[26] -to "ADC_Adapter:inst|DA[8]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[27] -to "ADC_Adapter:inst|DA[9]" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=28" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=28" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=28" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=109" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=2048" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=2048" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
+set_global_assignment -name BDF_FILE Ortiada_BDF.bdf
+set_global_assignment -name BDF_FILE Ortiada_TEST_BDF.bdf
+set_global_assignment -name QSYS_FILE IFFT_Chirp/qsys/NCO.qsys
+set_global_assignment -name QSYS_FILE IFFT_Chirp/qsys/IFFT.qsys
+set_global_assignment -name SIGNALTAP_FILE Test_ORT.stp
+set_global_assignment -name SLD_FILE db/Test_ORT_auto_stripped.stp
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name SLD_FILE db/ADC_TEST_STP_auto_stripped.stp
